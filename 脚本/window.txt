@@ -1,0 +1,7 @@
+zip -q -r html.zip /home/html
+
+你的名字:
+jar cvf xxx.jar * 
+
+你的名字:
+jar cvf0m ss.jar .manfiest.mf  /dir/*

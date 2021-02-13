@@ -1,0 +1,14 @@
+CREATE SEQUENCE seq_student
+             INCREMENT BY 1 --每次增加1，可以写非0的任何整数
+             START WITH 1 -- 从1开始（起始值）
+             MAXVALUE  999   -- 设置最大值：设置为 NOMAXVALUE 表示无最大值
+             MINVALUE 1   -- 设置最小值
+             NOCYCLE      -- 不循环一直增加
+             CACHE 20; -- 设置20个缓存,不使用缓存则写 NOCACHE
+			 
+			 
+			 create trigger tri_student_ins   --每个触发器名不可一样
+       before insert on student for each row  when (new.s_id is null) --student:换为自己的表名;s_id 换为自己的主键名
+    begin 
+      select seq_student.nextval into:new.s_id from dual;  -- seq_student:换为上一步创建的自增序列名;s_id 换为主键名
+    end;
