@@ -1,8 +1,0 @@
-{name}/{profiles:.[^-].}
-{name}-{profiles}.json
-{label}/{name}-{profiles}.yml
-{name}/{profiles}/{label:.*}
-{label}/{name}-{profiles}.properties
-{label}/{name}-{profiles}.json
-{name}/{profile}/{label}/**
-{name}/{profile}/{label}/**
